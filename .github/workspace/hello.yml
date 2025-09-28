@@ -1,4 +1,4 @@
-aame: Hello Github Actions
+name: Hello Github Actions
 
 on:
   push:
