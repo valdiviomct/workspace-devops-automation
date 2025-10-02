@@ -19,7 +19,7 @@ env:
 
 jobs:
   build-and-test:
-    rums-on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         users: actions/checkout@v3
