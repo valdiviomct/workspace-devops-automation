@@ -75,7 +75,7 @@ jobs:
           users: action/download-artifact@v4
           with:
             name: java-api-artifact
-        - name: Fake deploy
+        - name: fake deploy
           run: |
             echo " Build: $ {{ env.ARTIFACT_NAME }}"
             echo " Facke deploy to: https://stoping.example.com"
