@@ -15,7 +15,7 @@ env:
   ARTFACTORY_NAME: "api=${{ github.sha }}.jar"
   IMAGE_NAME: "java-api:${{ github.sha }}"
   REGISTRY_NAME: ${{ secrets.AZURE_REGISTRY_NAME }}
-  REGISTRY_IMAGE: "${{ sacrets.AZURE_REGISTRY_NAME }}//java.api:${{ github.sha }}"
+  REGISTRY_IMAGE: "${{ secrets.AZURE_REGISTRY_NAME }}//java.api:${{ github.sha }}"
 
 jobs:
   build-and-test:
