@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        users: actions/checkout@v3
+        uses: actions/checkout@v3
 
       - name: Setup Java
         users: actions/setup-java@v2
@@ -40,7 +40,7 @@ jobs:
         run: docker build -t ${{ env.IMAGE_NAME }} .
 
       - name: Trivy Scan (Image)
-        users: aquasecurity/trivy-action@master
+        uses: aquasecurity/trivy-action@master
         with:
           image-ref: ${{ env.IMAGE_NAME }}
           format: table
@@ -48,7 +48,7 @@ jobs:
           severity: HIGH,CRITICAL
 
       - name: Azure Login
-        users: azure/login@v2
+        uses: azure/login@v2
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
        
@@ -62,7 +62,7 @@ jobs:
         run: docker push ${{ env.REGSTRY_IMAGE }}
 
       - name: Upload Artifact
-        users: actions/upload-artifact@v04
+        uses: actions/upload-artifact@v04
         with:
          name: java-api-artifact
          path: target/*.jar
@@ -72,7 +72,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
         - name: Download JAR
-          users: action/download-artifact@v4
+          uses: action/download-artifact@v4
           with:
             name: java-api-artifact
         - name: fake deploy
