@@ -78,4 +78,4 @@ jobs:
         - name: fake deploy
           run: |
             echo " Build: $ {{ env.ARTIFACT_NAME }}"
-            echo " Facke deploy to: https://stoping.example.com"
+            echo " Fake deploy to: https://stoging.example.com"
